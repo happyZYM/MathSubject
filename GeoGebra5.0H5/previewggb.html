@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <style>
+            body{
+                overflow: hidden;
+                margin: 0;
+            }
+            .fixButtons{
+                position: fixed;
+                right: 20px;
+                bottom: 32px;
+            }
+            .fixButtons div{
+                cursor: pointer;
+                width: 36px;
+                line-height: 36px;
+                text-align: center;
+                height: 36px;
+                margin-top: 10px;
+                border-radius: 50%;
+                background-size: 36px 36px;
+                display: none;
+            }
+            .buttonEdit{
+                background-image: url(./web3d/images/edit.svg);
+            }
+            .buttonEdit:hover{
+                background-image: url(./web3d/images/edit_press.svg);
+            }
+            .buttonReset{
+                background-image: url(./web3d/images/reset.svg);
+            }
+            .buttonReset:hover{
+                background-image: url(./web3d/images/reset_press.svg);
+            }
+            .buttonClose{
+                background-image: url(./web3d/images/close.svg);
+            }
+            .buttonClose:hover{
+                background-image: url(./web3d/images/close_press.svg);
+            }
+            /* .GeoGebraFrame .jsloaded .applet-focused{border-width: 0 !important;} */
+
+        </style>
+    </head>
+    <body>
+        <div class="geogebra-player"></div>
+        <div class="fixButtons">
+          <div class="buttonEdit b1 b3 b5 b7"></div>  
+          <div class="buttonReset b2 b3 b6 b7"></div>  
+          <div class="buttonClose b4 b5 b6 b7"></div>  
+        </div>
+    </body>
+
+<script type="text/javascript" src="./web3d/web3d.nocache.js"></script>
+<script type="text/javascript" src="./web3d/js/zipjs/inflate.js"></script>
+<script type="text/javascript" src="./web3d/deploy.js"></script>
+<script type="text/javascript" src="./web3d/1D11BB306A06E722B20B614AD3CE91F9.cache.js"></script>
+<script src="./web3d/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        invokeMethod('ggbLoadOver');
+    });
+    // 打开ggb文件
+    function setDyCourseware(base64FileString,teaching,iBtn,width, height){
+        iBtn = iBtn & 0x00ff;
+        console.log(iBtn);
+        // $('.geogebra-player').html('');
+        $('.fixButtons div').hide();
+        $('.fixButtons .b'+iBtn).show();
+        width = width - 4;
+        height = height- 4;
+        geogebra.render(".geogebra-player", base64FileString,width,height, function () {
+            setTimeout(() => {
+                // $('.GeoGebraFrame.jsloaded.applet-unfocused').css('border-width','0px');
+                // $('.GeoGebraFrame.jsloaded.applet-focused').css('border-width','0px');
+            }, 1000);
+        });
+    }
+    // 去编辑
+    $('.buttonEdit').click(function(){
+        invokeMethod('gotoEdit');
+        // window.location.href = './GeoGebra.html';
+    });
+	// 设置宽高
+	function setSize(width,height){
+		ggbApplet.setSize(width,height)	
+	}
+    // 重置到打开状态
+    $('.buttonReset').click(function(){
+        ggbApplet.reset();
+    });
+
+    // 关闭
+    $('.buttonClose').click(function(){
+        invokeMethod('closeWebView');
+    });
+    // 调用本地方法：QCefClient.invokeMethod
+    function invokeMethod(){
+        var arg = arguments;
+        try {
+            switch(arg.length)
+            {
+            case 1:
+            QCefClient.invokeMethod(arg[0]);
+            break;
+            case 2:
+            QCefClient.invokeMethod(arg[0],arg[1]);
+            break;
+            case 3:
+            QCefClient.invokeMethod(arg[0],arg[1],arg[2]);
+            break;
+            }
+        } catch (error) {
+            console.warn(error);
+        }
+    }
+</script>
+</html>
+
+

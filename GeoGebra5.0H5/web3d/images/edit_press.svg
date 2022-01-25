@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/56x56px/授课/编辑-press</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="27" cy="27" r="27"></circle>
+        <filter x="-13.0%" y="-9.3%" width="125.9%" height="125.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="icon/56x56px/授课/编辑-press" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编辑" transform="translate(1.000000, 1.000000)">
+            <g id="Oval">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <circle stroke-opacity="0.1" stroke="#000000" stroke-width="1" stroke-linejoin="square" fill-opacity="0.9" fill="#F1F2F6" fill-rule="evenodd" cx="27" cy="27" r="26.5"></circle>
+            </g>
+            <g id="Group" transform="translate(10.000000, 10.000000)" fill="#8B8D99">
+                <path d="M21.4003058,16.1277529 L21.4003058,11.1277529 L23.4003058,11.1277529 L23.4003058,16.1277529 L26.4003058,16.1277529 L26.4003058,11.1277529 L6.40030584,11.1277529 L6.40030584,16.1277529 L21.4003058,16.1277529 Z M4.77335038,9.12775289 L26.4003058,9.12775289 C27.5048753,9.12775289 28.4003058,10.0231834 28.4003058,11.1277529 L28.4003058,16.1277529 C28.4003058,17.2323224 27.5048753,18.1277529 26.4003058,18.1277529 L4.77335038,18.1277529 C4.33441564,18.1277529 3.90767025,17.9833557 3.55892015,17.7168278 L-0.751963136,14.4222904 C-1.19077407,14.0869347 -1.27464115,13.4593487 -0.939285497,13.0205378 C-0.88542833,12.950066 -0.822434928,12.8870726 -0.751963136,12.8332154 L3.55892015,9.53867793 C3.90767025,9.27215012 4.33441564,9.12775289 4.77335038,9.12775289 Z M1.50030622,13.6855397 L4.37464544,15.8832494 L4.37464544,11.4277521 L1.50030622,13.6855397 Z" id="Combined-Shape" transform="translate(13.627753, 13.627753) rotate(-45.000000) translate(-13.627753, -13.627753) "></path>
+                <rect id="Rectangle" x="3" y="26" width="28" height="2" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

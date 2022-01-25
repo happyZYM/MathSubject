@@ -1,0 +1,1807 @@
+body {
+  margin: 0;
+}
+.fe-container {
+  width: 635px;
+  margin: auto;
+  background: #f7f7f7;
+}
+.fe-container .hide {
+  display: none;
+}
+.fe-container .fe-toolbar {
+  background: #f7f7f7;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 15px 20px 0px 0px;
+}
+.fe-container .fe-toolbar.disabled {
+  pointer-events: none;
+}
+.fe-container .fe-toolbar .fe-symbol {
+  position: relative;
+  width: 80px;
+  display: inline-block;
+  margin: 0px 0px 15px 20px;
+  font-size: 12px;
+  text-align: center;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.fe-container .fe-toolbar .fe-symbol img {
+  height: 30px;
+  display: inline-block;
+}
+.fe-container .fe-toolbar .fe-symbol:hover {
+  background: #D5F1E5;
+  cursor: pointer;
+}
+.fe-container .fe-toolbar .fe-symbol.active {
+  background: #D5F1E5;
+}
+.fe-container .fe-toolbar .fe-symbol.active .fe-symbol-layer {
+  display: block;
+}
+.fe-container .fe-toolbar .fe-symbol .fe-symbol-layer {
+  position: absolute;
+  top: 75px;
+  left: -52px;
+  min-width: 120px;
+  max-width: 200px;
+  padding: 4px;
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  display: none;
+  margin-top: -18px;
+  z-index: 10000020;
+}
+.fe-container .fe-toolbar .fe-symbol .fe-symbol-layer .fe-symbol-layer-triangle {
+  top: -4px;
+  left: 85px;
+  width: 7px;
+  height: 7px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  display: block;
+  border-color: transparent;
+  border-style: solid;
+  background-color: #fff;
+  z-index: -1;
+}
+.fe-container .fe-toolbar .fe-symbol .fe-symbol-layer img {
+  float: left;
+  padding: 5px;
+}
+.fe-container .fe-toolbar .fe-symbol .fe-symbol-layer img:hover {
+  background: #e8e9ea;
+}
+.fe-container .fe-latex-preview {
+  width: 100%;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+.fe-container .fe-latex-preview .latex-preview-text {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  font-size: 13px;
+  color: #333;
+}
+.fe-container .fe-latex-preview .latex-preview-content {
+  position: absolute;
+  top: 18px;
+  left: 70px;
+}
+.fe-container .fe-latex-preview .latex-preview-content svg:nth-child(2) {
+  display: none;
+}
+.fe-container .fe-latex-preview .latex-error {
+  color: #ff0000;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 13px;
+}
+.fe-container .fe-visual {
+  width: calc(100% - 20px);
+  outline: none;
+  height: 100px;
+  overflow: auto;
+  padding: 10px;
+  border: 0!important;
+  background: #ffffff;
+  font-size: 2em;
+  border-bottom: solid 1px #d9d9d9 !important;
+}
+.fe-container .fe-visual::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 8px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+.fe-container .fe-visual::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 8px;
+  background: #CCCCCC;
+}
+.fe-container .fe-latex-input {
+  height: 120px;
+  border-bottom: solid 1px #e5e5e5;
+  overflow: hidden;
+}
+.fe-container .fe-latex-input textarea {
+  width: calc(100% - 20px);
+  border: none;
+  height: 100px;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  box-sizing: content-box;
+  resize: none;
+}
+.fe-container .fe-tip {
+  position: absolute;
+  top: 50%;
+}
+.fe-container .fe-tip.fe-tip-text {
+  width: 140px;
+  height: 100px;
+  left: -145px;
+  background-color: #F9F9FB;
+  border-radius: 2px;
+  margin-top: -45px;
+  font-size: 13px;
+  color: #1A1A33;
+  padding-left: 12px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.fe-container .fe-tip.fe-tip-text p {
+  line-height: 16px;
+}
+.fe-container .fe-tip.fe-tip-text button {
+  color: #a3a8b3;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-size: 20px;
+}
+.fe-container .fe-tip.fe-tip-text button:hover,
+.fe-container .fe-tip.fe-tip-text button:active {
+  color: #8c9098;
+}
+.fe-container .fe-tip.fe-tip-text:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 2px 0 2px 4px;
+  border-color: transparent transparent transparent #ffffff;
+  position: absolute;
+  right: -4px;
+  top: 44px;
+}
+.fe-container .fe-tip.fe-tip-img {
+  width: 117px;
+  height: 126px;
+  margin-top: -63px;
+  left: -120px;
+  background-image: url('../images/formula-tip.png');
+  background-size: cover;
+}
+.fe-container .fe-footer {
+  border-top: 1px solid #d9d9d9;
+  padding: 10px 20px 10px 0px;
+  text-align: center;
+  height: 35px;
+  box-sizing: content-box;
+  background-color: #eeeeee;
+}
+.fe-container .fe-footer .btn {
+  font-size: 14px;
+  color: #ffffff;
+  border: 0;
+  width: 108px;
+  height: 32px;
+  margin: 1px 5px 0px 5px;
+  background: #00b266;
+  float: right;
+  cursor: pointer;
+  outline: none;
+}
+.fe-container .fe-footer .btn.btn-cancel {
+  border: 1px solid #979797;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #333333;
+}
+.fe-container .fe-footer .btn.btn-cancel:hover {
+  background: #f9f9f9;
+}
+.fe-container .fe-footer .btn.btn-submit-disabled {
+  background: #99e0c1;
+  border-radius: 2px;
+}
+.fe-container .fe-footer .btn.btn-submit {
+  background: #00b266;
+  border-radius: 2px;
+  /* box-shadow: 0 4px 10px 0 rgba(59,156,237,0.60); */
+}
+.fe-container .fe-footer .btn.btn-submit:hover {
+  background: #009f5b;
+}
+.fe-container .fe-footer .switch-title {
+  float: left;
+  font-size: 14px;
+  line-height: 32px;
+  color: #333;
+  margin-left: 16px;
+  margin-right: 10px;
+}
+.fe-container .fe-footer .switch-btn {
+  margin-top: 8px;
+  width: 30px;
+  height: 16px;
+  line-height: 16px;
+  float: left;
+}
+.fe-container .fe-footer .switch-btn a {
+  height: 20px;
+  width: 20px;
+}
+.fe-container .fe-footer .switch-btn span {
+  height: 16px;
+  min-height: 16px;
+  line-height: 16px!important;
+  font-family: Arial, sans-serif;
+}
+.fe-container .fe-footer .switch-btn input[type="checkbox"] {
+  position: absolute!important;
+}
+.fe-container .fe-footer .switch-btn input:checked ~ span a {
+  margin-left: -18px;
+}
+
+@charset "UTF-8";
+/*
+* CSS TOGGLE SWITCH
+*
+* Ionuț Colceriu - ghinda.net
+* https://github.com/ghinda/css-toggle-switch
+*
+*/
+/* supported values are px, rem-calc, em-calc
+ */
+/* imports
+ */
+/* Functions
+ */
+/* Shared
+ */
+/* Hide by default
+ */
+.switch-toggle a,
+.switch-light span span {
+  display: none;
+}
+/* We can't test for a specific feature,
+ * so we only target browsers with support for media queries.
+ */
+@media only screen {
+  /* Checkbox
+*/
+  .switch-light {
+    position: relative;
+    display: block;
+    /* simulate default browser focus outlines on the switch,
+* when the inputs are focused.
+*/
+  }
+  .switch-light::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .switch-light *,
+  .switch-light *:before,
+  .switch-light *:after {
+    box-sizing: border-box;
+  }
+  .switch-light a {
+    display: block;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .switch-light label,
+  .switch-light > span {
+    /* breathing room for bootstrap/foundation classes.
+ */
+    line-height: 2em;
+    vertical-align: middle;
+  }
+  .switch-light input:focus ~ span a,
+  .switch-light input:focus + label {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: Highlight;
+    /* Chrome/Opera gets its native focus styles.
+ */
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 0) {
+  .switch-light input:focus ~ span a,
+  .switch-light input:focus + label {
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+  }
+}
+@media only screen {
+  /* don't hide the input from screen-readers and keyboard access
+*/
+  .switch-light input {
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+  }
+  .switch-light input:checked ~ span a {
+    right: 0%;
+  }
+  /* inherit from label
+*/
+  .switch-light strong {
+    font-weight: inherit;
+  }
+  .switch-light > span {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    min-height: 2em;
+    /* overwrite 3rd party classes padding
+* eg. bootstrap .well
+*/
+    padding: 0;
+    text-align: left;
+  }
+  .switch-light span span {
+    position: relative;
+    z-index: 2;
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .switch-light a {
+    position: absolute;
+    right: 50%;
+    top: 0;
+    z-index: 1;
+    display: block;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+  }
+  /* Radio Switch
+*/
+  .switch-toggle {
+    position: relative;
+    display: block;
+    /* simulate default browser focus outlines on the switch,
+* when the inputs are focused.
+*/
+    /* For callout panels in foundation
+*/
+    padding: 0 !important;
+    /* 2 items
+*/
+    /* 3 items
+*/
+    /* 4 items
+*/
+    /* 5 items
+*/
+    /* 6 items
+*/
+  }
+  .switch-toggle::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .switch-toggle *,
+  .switch-toggle *:before,
+  .switch-toggle *:after {
+    box-sizing: border-box;
+  }
+  .switch-toggle a {
+    display: block;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .switch-toggle label,
+  .switch-toggle > span {
+    /* breathing room for bootstrap/foundation classes.
+ */
+    line-height: 2em;
+    vertical-align: middle;
+  }
+  .switch-toggle input:focus ~ span a,
+  .switch-toggle input:focus + label {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: Highlight;
+    /* Chrome/Opera gets its native focus styles.
+ */
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 0) {
+  .switch-toggle input:focus ~ span a,
+  .switch-toggle input:focus + label {
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+  }
+}
+@media only screen {
+  .switch-toggle input {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+  }
+  .switch-toggle input + label {
+    position: relative;
+    z-index: 2;
+    display: block;
+    float: left;
+    padding: 0 0.5em;
+    margin: 0;
+    text-align: center;
+  }
+  .switch-toggle a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 1;
+    width: 10px;
+    height: 100%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(4),
+  .switch-toggle label:nth-child(2):nth-last-child(4) ~ label,
+  .switch-toggle label:nth-child(2):nth-last-child(4) ~ a {
+    width: 50%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(4) ~ input:checked:nth-child(3) + label ~ a {
+    left: 50%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(6),
+  .switch-toggle label:nth-child(2):nth-last-child(6) ~ label,
+  .switch-toggle label:nth-child(2):nth-last-child(6) ~ a {
+    width: 33.33%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(6) ~ input:checked:nth-child(3) + label ~ a {
+    left: 33.33%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(6) ~ input:checked:nth-child(5) + label ~ a {
+    left: 66.66%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(8),
+  .switch-toggle label:nth-child(2):nth-last-child(8) ~ label,
+  .switch-toggle label:nth-child(2):nth-last-child(8) ~ a {
+    width: 25%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(3) + label ~ a {
+    left: 25%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(5) + label ~ a {
+    left: 50%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(7) + label ~ a {
+    left: 75%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(10),
+  .switch-toggle label:nth-child(2):nth-last-child(10) ~ label,
+  .switch-toggle label:nth-child(2):nth-last-child(10) ~ a {
+    width: 20%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(3) + label ~ a {
+    left: 20%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(5) + label ~ a {
+    left: 40%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(7) + label ~ a {
+    left: 60%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(9) + label ~ a {
+    left: 80%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(12),
+  .switch-toggle label:nth-child(2):nth-last-child(12) ~ label,
+  .switch-toggle label:nth-child(2):nth-last-child(12) ~ a {
+    width: 16.6%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(3) + label ~ a {
+    left: 16.6%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(5) + label ~ a {
+    left: 33.2%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(7) + label ~ a {
+    left: 49.8%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(9) + label ~ a {
+    left: 66.4%;
+  }
+  .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(11) + label ~ a {
+    left: 83%;
+  }
+  /* Candy Theme
+* Based on the "Sort Switches / Toggles (PSD)" by Ormal Clarck
+* http://www.premiumpixels.com/freebies/sort-switches-toggles-psd/
+*/
+  .switch-toggle.switch-candy,
+  .switch-light.switch-candy > span {
+    background-color: #2d3035;
+    border-radius: 3px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  .switch-light.switch-candy span span,
+  .switch-light.switch-candy input:checked ~ span span:first-child,
+  .switch-toggle.switch-candy label {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 1px #191b1e;
+  }
+  .switch-light.switch-candy input ~ span span:first-child,
+  .switch-light.switch-candy input:checked ~ span span:nth-child(2),
+  .switch-candy input:checked + label {
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  .switch-candy a {
+    border: 1px solid #333;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+    background-color: #70c66b;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), transparent);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+  }
+  .switch-candy-blue a {
+    background-color: #38a3d4;
+  }
+  .switch-candy-yellow a {
+    background-color: #f5e560;
+  }
+  /* iOS Theme
+*/
+  .switch-ios.switch-light span span {
+    color: #888b92;
+  }
+  .switch-ios.switch-light a {
+    left: -1px;
+    top: -2px;
+    width: 2em;
+    height: 2em;
+    background-color: #fff;
+    border-radius: 100%;
+    border: 0.25em solid #D8D9DB;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .switch-ios.switch-light > span {
+    display: block;
+    width: 100%;
+    height: 2em;
+    background-color: #D8D9DB;
+    border-radius: 1.75em;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+  }
+  .switch-ios.switch-light > span span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    line-height: 1.875em;
+    vertical-align: middle;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .switch-ios.switch-light > span span:first-of-type {
+    opacity: 1;
+    padding-left: 1.875em;
+  }
+  .switch-ios.switch-light > span span:last-of-type {
+    padding-right: 1.875em;
+  }
+  .switch-ios.switch-light input:checked ~ span a {
+    left: 100%;
+    border-color: #00b266;
+    margin-left: -2em;
+  }
+  .switch-ios.switch-light input:checked ~ span {
+    border-color: #00b266;
+    box-shadow: inset 0 0 0 30px #00b266;
+  }
+  .switch-ios.switch-light input:checked ~ span span:first-of-type {
+    opacity: 0;
+  }
+  .switch-ios.switch-light input:checked ~ span span:last-of-type {
+    opacity: 1;
+    color: #fff;
+  }
+  .fe-container .fe-footer .switch-btn input[type="checkbox"] {
+    margin-top: -10px;
+  }
+  .switch-ios.switch-toggle {
+    background-color: #D8D9DB;
+    border-radius: 30px;
+    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
+  }
+  .switch-ios.switch-toggle a {
+    background-color: #00b266;
+    border: 0.125em solid #D8D9DB;
+    border-radius: 1.75em;
+    -webkit-transition: all 0.12s ease-out;
+    -moz-transition: all 0.12s ease-out;
+    transition: all 0.12s ease-out;
+  }
+  .switch-ios.switch-toggle label {
+    height: 2.4em;
+    color: #888b92;
+    line-height: 2.4em;
+    vertical-align: middle;
+  }
+  .switch-ios input:checked + label {
+    color: #3e4043;
+  }
+  /* Holo Theme
+*/
+  .switch-toggle.switch-holo,
+  .switch-light.switch-holo > span {
+    background-color: #464747;
+    border-radius: 1px;
+    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .switch-holo label {
+    color: #fff;
+  }
+  .switch-holo > span span {
+    opacity: 0;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+  }
+  .switch-holo > span span:first-of-type {
+    opacity: 1;
+  }
+  .switch-holo > span span,
+  .switch-holo label {
+    font-size: 85%;
+    line-height: 2.15625em;
+  }
+  .switch-holo a {
+    background-color: #666;
+    border-radius: 1px;
+    box-shadow: inset rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.3) 0 -1px 0;
+  }
+  /* Selected ON switch-light
+*/
+  .switch-holo.switch-light input:checked ~ span a {
+    background-color: #0E88B1;
+  }
+  .switch-holo.switch-light input:checked ~ span span:first-of-type {
+    opacity: 0;
+  }
+  .switch-holo.switch-light input:checked ~ span span:last-of-type {
+    opacity: 1;
+  }
+  /* Material Theme
+*/
+  /* switch-light
+*/
+  .switch-light.switch-material a {
+    top: -0.1875em;
+    width: 1.75em;
+    height: 1.75em;
+    border-radius: 50%;
+    background: #fafafa;
+    box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.14), 0 0.1875em 0.125em -0.125em rgba(0, 0, 0, 0.2), 0 0.125em 0.25em 0 rgba(0, 0, 0, 0.12);
+    -webkit-transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .switch-material.switch-light {
+    overflow: visible;
+  }
+  .switch-material.switch-light::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .switch-material.switch-light > span {
+    overflow: visible;
+    position: relative;
+    top: 0.1875em;
+    width: 3.25em;
+    height: 1.5em;
+    min-height: auto;
+    border-radius: 1em;
+    background: rgba(0, 0, 0, 0.26);
+  }
+  .switch-material.switch-light span span {
+    position: absolute;
+    clip: rect(0 0 0 0);
+  }
+  .switch-material.switch-light input:checked ~ span a {
+    right: 0;
+    background: #3f51b5;
+    box-shadow: 0 0.1875em 0.25em 0 rgba(0, 0, 0, 0.14), 0 0.1875em 0.1875em -0.125em rgba(0, 0, 0, 0.2), 0 0.0625em 0.375em 0 rgba(0, 0, 0, 0.12);
+  }
+  .switch-material.switch-light input:checked ~ span {
+    background: rgba(63, 81, 181, 0.5);
+  }
+  /* switch-toggle
+*/
+  .switch-toggle.switch-material {
+    overflow: visible;
+  }
+  .switch-toggle.switch-material::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .switch-toggle.switch-material a {
+    top: 48%;
+    width: 0.375em !important;
+    height: 0.375em;
+    margin-left: 0.25em;
+    background: #3f51b5;
+    border-radius: 100%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: -webkit-transform 0.4s ease-in;
+    -moz-transition: -moz-transform 0.4s ease-in;
+    transition: transform 0.4s ease-in;
+  }
+  .switch-toggle.switch-material label {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1em;
+  }
+  .switch-toggle.switch-material label:before {
+    content: '';
+    position: absolute;
+    top: 48%;
+    left: 0;
+    display: block;
+    width: 0.875em;
+    height: 0.875em;
+    border-radius: 100%;
+    border: 0.125em solid rgba(0, 0, 0, 0.54);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .switch-toggle.switch-material input:checked + label:before {
+    border-color: #3f51b5;
+  }
+  /* ripple
+*/
+  .switch-light.switch-material > span:before,
+  .switch-light.switch-material > span:after,
+  .switch-toggle.switch-material label:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: block;
+    width: 4em;
+    height: 4em;
+    border-radius: 100%;
+    background: #3f51b5;
+    opacity: 0.4;
+    margin-left: -1.25em;
+    margin-top: -1.25em;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: opacity 0.4s ease-in;
+    -moz-transition: opacity 0.4s ease-in;
+    transition: opacity 0.4s ease-in;
+  }
+  .switch-light.switch-material > span:after {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    margin-right: -1.25em;
+  }
+  .switch-toggle.switch-material label:after {
+    width: 3.25em;
+    height: 3.25em;
+    margin-top: -0.75em;
+  }
+  @-webkit-keyframes materialRipple {
+    0% {
+      -webkit-transform: scale(0);
+    }
+    20% {
+      -webkit-transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: scale(1);
+    }
+  }
+  @-moz-keyframes materialRipple {
+    0% {
+      -moz-transform: scale(0);
+    }
+    20% {
+      -moz-transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      -moz-transform: scale(1);
+    }
+  }
+  @keyframes materialRipple {
+    0% {
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+    }
+    20% {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  .switch-material.switch-light input:not(:checked) ~ span:after,
+  .switch-material.switch-light input:checked ~ span:before,
+  .switch-toggle.switch-material input:checked + label:after {
+    -webkit-animation: materialRipple 0.4s ease-in;
+    -moz-animation: materialRipple 0.4s ease-in;
+    animation: materialRipple 0.4s ease-in;
+  }
+  /* trick to prevent the default checked ripple animation from showing
+* when the page loads.
+* the ripples are hidden by default, and shown only when the input is focused.
+*/
+  .switch-light.switch-material.switch-light input ~ span:before,
+  .switch-light.switch-material.switch-light input ~ span:after,
+  .switch-material.switch-toggle input + label:after {
+    visibility: hidden;
+  }
+  .switch-light.switch-material.switch-light input:focus:checked ~ span:before,
+  .switch-light.switch-material.switch-light input:focus:not(:checked) ~ span:after,
+  .switch-material.switch-toggle input:focus:checked + label:after {
+    visibility: visible;
+  }
+}
+/* Bugfix for older Webkit, including mobile Webkit. Adapted from
+ * http://css-tricks.com/webkit-sibling-bug/
+ */
+@media only screen and (-webkit-max-device-pixel-ratio: 2) and (max-device-width: 80em) {
+  .switch-light,
+  .switch-toggle {
+    -webkit-animation: webkitSiblingBugfix infinite 1s;
+  }
+}
+@-webkit-keyframes webkitSiblingBugfix {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+/*# sourceMappingURL=toggle-switch.css.map */
+
+.fe-toolbar .fe-symbol {
+  image-rendering: -webkit-optimize-contrast;
+}
+.fe-toolbar .fe-symbol span.image {
+  height: 30px;
+  width: 80px;
+  display: inline-block;
+  background: center no-repeat;
+  background-size: contain;
+}
+.fe-toolbar .fe-symbol .fe-symbol-layer {
+  text-align: left;
+}
+.fe-toolbar .fe-symbol .fe-symbol-layer span.image {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  background-size: 30px 30px;
+  float: left;
+}
+.fe-toolbar .fe-symbol .fe-symbol-layer span.image:hover {
+  background-color: #D5F1E5;
+}
+.fe-toolbar .fe-symbol span.image.image-001 {
+  background-image: url("../images/formula/001.png");
+}
+.fe-toolbar .fe-symbol span.image.image-002 {
+  background-image: url("../images/formula/002.png");
+}
+.fe-toolbar .fe-symbol span.image.image-003 {
+  background-image: url("../images/formula/003.png");
+}
+.fe-toolbar .fe-symbol span.image.image-004 {
+  background-image: url("../images/formula/004.png");
+}
+.fe-toolbar .fe-symbol span.image.image-006 {
+  background-image: url("../images/formula/006.png");
+}
+.fe-toolbar .fe-symbol span.image.image-007 {
+  background-image: url("../images/formula/007.png");
+}
+.fe-toolbar .fe-symbol span.image.image-008 {
+  background-image: url("../images/formula/008.png");
+}
+.fe-toolbar .fe-symbol span.image.image-009 {
+  background-image: url("../images/formula/009.png");
+}
+.fe-toolbar .fe-symbol span.image.image-013 {
+  background-image: url("../images/formula/013.png");
+}
+.fe-toolbar .fe-symbol span.image.image-014 {
+  background-image: url("../images/formula/014.png");
+}
+.fe-toolbar .fe-symbol span.image.image-015 {
+  background-image: url("../images/formula/015.png");
+}
+.fe-toolbar .fe-symbol span.image.image-016 {
+  background-image: url("../images/formula/016.png");
+}
+.fe-toolbar .fe-symbol span.image.image-017 {
+  background-image: url("../images/formula/017.png");
+}
+.fe-toolbar .fe-symbol span.image.image-018 {
+  background-image: url("../images/formula/018.png");
+}
+.fe-toolbar .fe-symbol span.image.image-019 {
+  background-image: url("../images/formula/019.png");
+}
+.fe-toolbar .fe-symbol span.image.image-020 {
+  background-image: url("../images/formula/020.png");
+}
+.fe-toolbar .fe-symbol span.image.image-022 {
+  background-image: url("../images/formula/022.png");
+}
+.fe-toolbar .fe-symbol span.image.image-023 {
+  background-image: url("../images/formula/023.png");
+}
+.fe-toolbar .fe-symbol span.image.image-024 {
+  background-image: url("../images/formula/024.png");
+}
+.fe-toolbar .fe-symbol span.image.image-025 {
+  background-image: url("../images/formula/025.png");
+}
+.fe-toolbar .fe-symbol span.image.image-026 {
+  background-image: url("../images/formula/026.png");
+}
+.fe-toolbar .fe-symbol span.image.image-027 {
+  background-image: url("../images/formula/027.png");
+}
+.fe-toolbar .fe-symbol span.image.image-028 {
+  background-image: url("../images/formula/028.png");
+}
+.fe-toolbar .fe-symbol span.image.image-029 {
+  background-image: url("../images/formula/029.png");
+}
+.fe-toolbar .fe-symbol span.image.image-030 {
+  background-image: url("../images/formula/030.png");
+}
+.fe-toolbar .fe-symbol span.image.image-031 {
+  background-image: url("../images/formula/031.png");
+}
+.fe-toolbar .fe-symbol span.image.image-032 {
+  background-image: url("../images/formula/032.png");
+}
+.fe-toolbar .fe-symbol span.image.image-033 {
+  background-image: url("../images/formula/033.png");
+}
+.fe-toolbar .fe-symbol span.image.image-034 {
+  background-image: url("../images/formula/034.png");
+}
+.fe-toolbar .fe-symbol span.image.image-035 {
+  background-image: url("../images/formula/035.png");
+}
+.fe-toolbar .fe-symbol span.image.image-036 {
+  background-image: url("../images/formula/036.png");
+}
+.fe-toolbar .fe-symbol span.image.image-037 {
+  background-image: url("../images/formula/037.png");
+}
+.fe-toolbar .fe-symbol span.image.image-038 {
+  background-image: url("../images/formula/038.png");
+}
+.fe-toolbar .fe-symbol span.image.image-039 {
+  background-image: url("../images/formula/039.png");
+}
+.fe-toolbar .fe-symbol span.image.image-040 {
+  background-image: url("../images/formula/040.png");
+}
+.fe-toolbar .fe-symbol span.image.image-041 {
+  background-image: url("../images/formula/041.png");
+}
+.fe-toolbar .fe-symbol span.image.image-042 {
+  background-image: url("../images/formula/042.png");
+}
+.fe-toolbar .fe-symbol span.image.image-043 {
+  background-image: url("../images/formula/043.png");
+}
+.fe-toolbar .fe-symbol span.image.image-044 {
+  background-image: url("../images/formula/044.png");
+}
+.fe-toolbar .fe-symbol span.image.image-045 {
+  background-image: url("../images/formula/045.png");
+}
+.fe-toolbar .fe-symbol span.image.image-046 {
+  background-image: url("../images/formula/046.png");
+}
+.fe-toolbar .fe-symbol span.image.image-047 {
+  background-image: url("../images/formula/047.png");
+}
+.fe-toolbar .fe-symbol span.image.image-048 {
+  background-image: url("../images/formula/048.png");
+}
+.fe-toolbar .fe-symbol span.image.image-049 {
+  background-image: url("../images/formula/049.png");
+}
+.fe-toolbar .fe-symbol span.image.image-050 {
+  background-image: url("../images/formula/050.png");
+}
+.fe-toolbar .fe-symbol span.image.image-051 {
+  background-image: url("../images/formula/051.png");
+}
+.fe-toolbar .fe-symbol span.image.image-052 {
+  background-image: url("../images/formula/052.png");
+}
+.fe-toolbar .fe-symbol span.image.image-053 {
+  background-image: url("../images/formula/053.png");
+}
+.fe-toolbar .fe-symbol span.image.image-054 {
+  background-image: url("../images/formula/054.png");
+}
+.fe-toolbar .fe-symbol span.image.image-055 {
+  background-image: url("../images/formula/055.png");
+}
+.fe-toolbar .fe-symbol span.image.image-056 {
+  background-image: url("../images/formula/056.png");
+}
+.fe-toolbar .fe-symbol span.image.image-057 {
+  background-image: url("../images/formula/057.png");
+}
+.fe-toolbar .fe-symbol span.image.image-058 {
+  background-image: url("../images/formula/058.png");
+}
+.fe-toolbar .fe-symbol span.image.image-059 {
+  background-image: url("../images/formula/059.png");
+}
+.fe-toolbar .fe-symbol span.image.image-060 {
+  background-image: url("../images/formula/060.png");
+}
+.fe-toolbar .fe-symbol span.image.image-061 {
+  background-image: url("../images/formula/061.png");
+}
+.fe-toolbar .fe-symbol span.image.image-062 {
+  background-image: url("../images/formula/062.png");
+}
+.fe-toolbar .fe-symbol span.image.image-063 {
+  background-image: url("../images/formula/063.png");
+}
+.fe-toolbar .fe-symbol span.image.image-064 {
+  background-image: url("../images/formula/064.png");
+}
+.fe-toolbar .fe-symbol span.image.image-065 {
+  background-image: url("../images/formula/065.png");
+}
+.fe-toolbar .fe-symbol span.image.image-066 {
+  background-image: url("../images/formula/066.png");
+}
+.fe-toolbar .fe-symbol span.image.image-067 {
+  background-image: url("../images/formula/067.png");
+}
+.fe-toolbar .fe-symbol span.image.image-068 {
+  background-image: url("../images/formula/068.png");
+}
+.fe-toolbar .fe-symbol span.image.image-069 {
+  background-image: url("../images/formula/069.png");
+}
+.fe-toolbar .fe-symbol span.image.image-070 {
+  background-image: url("../images/formula/070.png");
+}
+.fe-toolbar .fe-symbol span.image.image-071 {
+  background-image: url("../images/formula/071.png");
+}
+.fe-toolbar .fe-symbol span.image.image-072 {
+  background-image: url("../images/formula/072.png");
+}
+.fe-toolbar .fe-symbol span.image.image-073 {
+  background-image: url("../images/formula/073.png");
+}
+.fe-toolbar .fe-symbol span.image.image-074 {
+  background-image: url("../images/formula/074.png");
+}
+.fe-toolbar .fe-symbol span.image.image-075 {
+  background-image: url("../images/formula/075.png");
+}
+.fe-toolbar .fe-symbol span.image.image-076 {
+  background-image: url("../images/formula/076.png");
+}
+.fe-toolbar .fe-symbol span.image.image-077 {
+  background-image: url("../images/formula/077.png");
+}
+.fe-toolbar .fe-symbol span.image.image-078 {
+  background-image: url("../images/formula/078.png");
+}
+.fe-toolbar .fe-symbol span.image.image-079 {
+  background-image: url("../images/formula/079.png");
+}
+.fe-toolbar .fe-symbol span.image.image-080 {
+  background-image: url("../images/formula/080.png");
+}
+.fe-toolbar .fe-symbol span.image.image-081 {
+  background-image: url("../images/formula/081.png");
+}
+.fe-toolbar .fe-symbol span.image.image-082 {
+  background-image: url("../images/formula/082.png");
+}
+.fe-toolbar .fe-symbol span.image.image-083 {
+  background-image: url("../images/formula/083.png");
+}
+.fe-toolbar .fe-symbol span.image.image-084 {
+  background-image: url("../images/formula/084.png");
+}
+.fe-toolbar .fe-symbol span.image.image-085 {
+  background-image: url("../images/formula/085.png");
+}
+.fe-toolbar .fe-symbol span.image.image-086 {
+  background-image: url("../images/formula/086.png");
+}
+.fe-toolbar .fe-symbol span.image.image-087 {
+  background-image: url("../images/formula/087.png");
+}
+.fe-toolbar .fe-symbol span.image.image-088 {
+  background-image: url("../images/formula/088.png");
+}
+.fe-toolbar .fe-symbol span.image.image-089 {
+  background-image: url("../images/formula/089.png");
+}
+.fe-toolbar .fe-symbol span.image.image-090 {
+  background-image: url("../images/formula/090.png");
+}
+.fe-toolbar .fe-symbol span.image.image-091 {
+  background-image: url("../images/formula/091.png");
+}
+.fe-toolbar .fe-symbol span.image.image-092 {
+  background-image: url("../images/formula/092.png");
+}
+.fe-toolbar .fe-symbol span.image.image-093 {
+  background-image: url("../images/formula/093.png");
+}
+.fe-toolbar .fe-symbol span.image.image-094 {
+  background-image: url("../images/formula/094.png");
+}
+.fe-toolbar .fe-symbol span.image.image-095 {
+  background-image: url("../images/formula/095.png");
+}
+.fe-toolbar .fe-symbol span.image.image-096 {
+  background-image: url("../images/formula/096.png");
+}
+.fe-toolbar .fe-symbol span.image.image-097 {
+  background-image: url("../images/formula/097.png");
+}
+.fe-toolbar .fe-symbol span.image.image-100 {
+  background-image: url("../images/formula/100.png");
+}
+.fe-toolbar .fe-symbol span.image.image-101 {
+  background-image: url("../images/formula/101.png");
+}
+.fe-toolbar .fe-symbol span.image.image-102 {
+  background-image: url("../images/formula/102.png");
+}
+.fe-toolbar .fe-symbol span.image.image-105 {
+  background-image: url("../images/formula/105.png");
+}
+.fe-toolbar .fe-symbol span.image.image-106 {
+  background-image: url("../images/formula/106.png");
+}
+.fe-toolbar .fe-symbol span.image.image-107 {
+  background-image: url("../images/formula/107.png");
+}
+.fe-toolbar .fe-symbol span.image.image-111 {
+  background-image: url("../images/formula/111.png");
+}
+.fe-toolbar .fe-symbol span.image.image-112 {
+  background-image: url("../images/formula/112.png");
+}
+.fe-toolbar .fe-symbol span.image.image-113 {
+  background-image: url("../images/formula/113.png");
+}
+.fe-toolbar .fe-symbol span.image.image-114 {
+  background-image: url("../images/formula/114.png");
+}
+.fe-toolbar .fe-symbol span.image.image-115 {
+  background-image: url("../images/formula/115.png");
+}
+.fe-toolbar .fe-symbol span.image.image-116 {
+  background-image: url("../images/formula/116.png");
+}
+.fe-toolbar .fe-symbol span.image.image-117 {
+  background-image: url("../images/formula/117.png");
+}
+.fe-toolbar .fe-symbol span.image.image-118 {
+  background-image: url("../images/formula/118.png");
+}
+.fe-toolbar .fe-symbol span.image.image-119 {
+  background-image: url("../images/formula/119.png");
+}
+.fe-toolbar .fe-symbol span.image.image-120 {
+  background-image: url("../images/formula/120.png");
+}
+.fe-toolbar .fe-symbol span.image.image-121 {
+  background-image: url("../images/formula/121.png");
+}
+.fe-toolbar .fe-symbol span.image.image-122 {
+  background-image: url("../images/formula/122.png");
+}
+.fe-toolbar .fe-symbol span.image.image-123 {
+  background-image: url("../images/formula/123.png");
+}
+.fe-toolbar .fe-symbol span.image.image-124 {
+  background-image: url("../images/formula/124.png");
+}
+.fe-toolbar .fe-symbol span.image.image-125 {
+  background-image: url("../images/formula/125.png");
+}
+.fe-toolbar .fe-symbol span.image.image-126 {
+  background-image: url("../images/formula/126.png");
+}
+.fe-toolbar .fe-symbol span.image.image-127 {
+  background-image: url("../images/formula/127.png");
+}
+.fe-toolbar .fe-symbol span.image.image-130 {
+  background-image: url("../images/formula/130.png");
+}
+.fe-toolbar .fe-symbol span.image.image-131 {
+  background-image: url("../images/formula/131.png");
+}
+.fe-toolbar .fe-symbol span.image.image-133 {
+  background-image: url("../images/formula/133.png");
+}
+.fe-toolbar .fe-symbol span.image.image-134 {
+  background-image: url("../images/formula/134.png");
+}
+.fe-toolbar .fe-symbol span.image.image-135 {
+  background-image: url("../images/formula/135.png");
+}
+.fe-toolbar .fe-symbol span.image.image-136 {
+  background-image: url("../images/formula/136.png");
+}
+.fe-toolbar .fe-symbol span.image.image-137 {
+  background-image: url("../images/formula/137.png");
+}
+.fe-toolbar .fe-symbol span.image.image-138 {
+  background-image: url("../images/formula/138.png");
+}
+.fe-toolbar .fe-symbol span.image.image-147 {
+  background-image: url("../images/formula/147.png");
+}
+.fe-toolbar .fe-symbol span.image.image-164 {
+  background-image: url("../images/formula/164.png");
+}
+.fe-toolbar .fe-symbol span.image.image-165 {
+  background-image: url("../images/formula/165.png");
+}
+.fe-toolbar .fe-symbol span.image.image-166 {
+  background-image: url("../images/formula/166.png");
+}
+.fe-toolbar .fe-symbol span.image.image-167 {
+  background-image: url("../images/formula/167.png");
+}
+.fe-toolbar .fe-symbol span.image.image-168 {
+  background-image: url("../images/formula/168.png");
+}
+.fe-toolbar .fe-symbol span.image.image-169 {
+  background-image: url("../images/formula/169.png");
+}
+.fe-toolbar .fe-symbol span.image.image-170 {
+  background-image: url("../images/formula/170.png");
+}
+.fe-toolbar .fe-symbol span.image.image-171 {
+  background-image: url("../images/formula/171.png");
+}
+.fe-toolbar .fe-symbol span.image.image-172 {
+  background-image: url("../images/formula/172.png");
+}
+.fe-toolbar .fe-symbol span.image.image-173 {
+  background-image: url("../images/formula/173.png");
+}
+.fe-toolbar .fe-symbol span.image.image-174 {
+  background-image: url("../images/formula/174.png");
+}
+.fe-toolbar .fe-symbol span.image.image-175 {
+  background-image: url("../images/formula/175.png");
+}
+.fe-toolbar .fe-symbol span.image.image-176 {
+  background-image: url("../images/formula/176.png");
+}
+.fe-toolbar .fe-symbol span.image.image-177 {
+  background-image: url("../images/formula/177.png");
+}
+.fe-toolbar .fe-symbol span.image.image-178 {
+  background-image: url("../images/formula/178.png");
+}
+.fe-toolbar .fe-symbol span.image.image-179 {
+  background-image: url("../images/formula/179.png");
+}
+
+/*
+ * MathQuill v0.10.1               http://mathquill.com
+ * by Han, Jeanine, and Mary  maintainers@mathquill.com
+ *
+ * This Source Code Form is subject to the terms of the
+ * Mozilla Public License, v. 2.0. If a copy of the MPL
+ * was not distributed with this file, You can obtain
+ * one at http://mozilla.org/MPL/2.0/.
+ */
+@font-face {
+  font-family: Symbola;
+  src: url(font/Symbola.eot);
+  src: local("Symbola Regular"), local("Symbola"), url(font/Symbola.woff2) format("woff2"), url(font/Symbola.woff) format("woff"), url(font/Symbola.ttf) format("truetype"), url(font/Symbola.otf) format("opentype"), url(font/Symbola.svg#Symbola) format("svg");
+}
+.mq-editable-field {
+  display: -moz-inline-box;
+  display: inline-block;
+}
+.mq-editable-field .mq-cursor {
+  border-left: 1px solid black;
+  margin-left: -1px;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  display: -moz-inline-box;
+  display: inline-block;
+}
+.mq-editable-field .mq-cursor.mq-blink {
+  visibility: hidden;
+}
+.mq-editable-field,
+.mq-math-mode .mq-editable-field {
+  border: 1px solid gray;
+}
+.mq-editable-field.mq-focused,
+.mq-math-mode .mq-editable-field.mq-focused {
+  /*-webkit-box-shadow: #8bd 0 0 1px 2px, inset #6ae 0 0 2px 0;*/
+  /*-moz-box-shadow: #8bd 0 0 1px 2px, inset #6ae 0 0 2px 0;*/
+  /*box-shadow: #8bd 0 0 1px 2px, inset #6ae 0 0 2px 0;*/
+  /*border-color: #709AC0;*/
+  /*border-radius: 1px;*/
+}
+.mq-math-mode .mq-editable-field {
+  margin: 1px;
+}
+.mq-editable-field .mq-latex-command-input {
+  color: inherit;
+  font-family: "Courier New", monospace;
+  border: 1px solid gray;
+  padding-right: 1px;
+  margin-right: 1px;
+  margin-left: 2px;
+}
+.mq-editable-field .mq-latex-command-input.mq-empty {
+  background: transparent;
+}
+.mq-editable-field .mq-latex-command-input.mq-hasCursor {
+  border-color: ActiveBorder;
+}
+.mq-editable-field.mq-empty:after,
+.mq-editable-field.mq-text-mode:after,
+.mq-math-mode .mq-empty:after {
+  visibility: hidden;
+  content: 'c';
+}
+.mq-editable-field .mq-cursor:only-child:after,
+.mq-editable-field .mq-textarea + .mq-cursor:last-child:after {
+  visibility: hidden;
+  content: 'c';
+}
+.mq-editable-field .mq-text-mode .mq-cursor:only-child:after {
+  content: '';
+}
+.mq-editable-field.mq-text-mode {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.mq-root-block,
+.mq-math-mode .mq-root-block {
+  display: -moz-inline-box;
+  display: inline-block;
+  width: 100%;
+  padding: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.mq-math-mode {
+  font-variant: normal;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 115%;
+  line-height: 1;
+  display: -moz-inline-box;
+  display: flex;
+}
+.mq-math-mode .mq-non-leaf,
+.mq-math-mode .mq-scaled {
+  display: -moz-inline-box;
+  display: inline-block;
+}
+.mq-math-mode var,
+.mq-math-mode .mq-text-mode,
+.mq-math-mode .mq-nonSymbola {
+  font-family: "Times New Roman", Symbola, serif;
+  line-height: 0.9;
+}
+.mq-math-mode * {
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  border-color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+}
+.mq-math-mode .mq-empty {
+  background: #ccc;
+}
+.mq-math-mode .mq-empty.mq-root-block {
+  background: transparent;
+}
+.mq-math-mode.mq-empty {
+  background: transparent;
+}
+.mq-math-mode .mq-text-mode {
+  font-size: 87%;
+}
+.mq-math-mode .mq-font {
+  font: 1em "Times New Roman", Symbola, serif;
+}
+.mq-math-mode .mq-font * {
+  font-family: inherit;
+  font-style: inherit;
+}
+.mq-math-mode b,
+.mq-math-mode b.mq-font {
+  font-weight: bolder;
+}
+.mq-math-mode var,
+.mq-math-mode i,
+.mq-math-mode i.mq-font {
+  font-style: italic;
+}
+.mq-math-mode var.mq-f {
+  margin-right: 0.2em;
+  margin-left: 0.1em;
+}
+.mq-math-mode .mq-roman var.mq-f {
+  margin: 0;
+}
+.mq-math-mode big {
+  font-size: 125%;
+}
+.mq-math-mode .mq-roman {
+  font-style: normal;
+}
+.mq-math-mode .mq-sans-serif {
+  font-family: sans-serif, Symbola, serif;
+}
+.mq-math-mode .mq-monospace {
+  font-family: monospace, Symbola, serif;
+}
+.mq-math-mode .mq-overline {
+  border-top: 1px solid black;
+  margin-top: 1px;
+}
+.mq-math-mode .mq-underline {
+  border-bottom: 1px solid black;
+  margin-bottom: 1px;
+}
+.mq-math-mode .mq-binary-operator {
+  padding: 0 0.2em;
+  display: -moz-inline-box;
+  display: inline-block;
+}
+.mq-math-mode .mq-supsub {
+  font-size: 90%;
+  vertical-align: -0.5em;
+}
+.mq-math-mode .mq-supsub.mq-limit {
+  font-size: 80%;
+  vertical-align: -0.4em;
+}
+.mq-math-mode .mq-supsub.mq-sup-only {
+  vertical-align: 0.5em;
+}
+.mq-math-mode .mq-supsub.mq-sup-only .mq-sup {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.mq-math-mode .mq-supsub .mq-sup {
+  display: block;
+}
+.mq-math-mode .mq-supsub .mq-sub {
+  display: block;
+  float: left;
+}
+.mq-math-mode .mq-supsub.mq-limit .mq-sub {
+  margin-left: -0.25em;
+}
+.mq-math-mode .mq-supsub .mq-binary-operator {
+  padding: 0 0.1em;
+}
+.mq-math-mode .mq-supsub .mq-fraction {
+  font-size: 70%;
+}
+.mq-math-mode sup.mq-nthroot {
+  font-size: 80%;
+  vertical-align: 0.8em;
+  margin-right: -0.6em;
+  margin-left: 0.2em;
+  min-width: 0.5em;
+}
+.mq-math-mode .mq-paren {
+  padding: 0 0.1em;
+  vertical-align: top;
+  -webkit-transform-origin: center 0.06em;
+  -moz-transform-origin: center 0.06em;
+  -ms-transform-origin: center 0.06em;
+  -o-transform-origin: center 0.06em;
+  transform-origin: center 0.06em;
+}
+.mq-math-mode .mq-paren.mq-ghost {
+  color: silver;
+}
+.mq-math-mode .mq-paren + span {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+.mq-math-mode .mq-array {
+  vertical-align: middle;
+  text-align: center;
+}
+.mq-math-mode .mq-array > span {
+  display: block;
+}
+.mq-math-mode .mq-operator-name {
+  font-family: Symbola, "Times New Roman", serif;
+  line-height: 0.9;
+  font-style: normal;
+}
+.mq-math-mode var.mq-operator-name.mq-first {
+  padding-left: 0.2em;
+}
+.mq-math-mode var.mq-operator-name.mq-last {
+  padding-right: 0.2em;
+}
+.mq-math-mode .mq-fraction {
+  font-size: 90%;
+  text-align: center;
+  vertical-align: -0.4em;
+  padding: 0 0.2em;
+}
+.mq-math-mode .mq-fraction,
+.mq-math-mode .mq-large-operator,
+.mq-math-mode x:-moz-any-link {
+  display: -moz-groupbox;
+}
+.mq-math-mode .mq-fraction,
+.mq-math-mode .mq-large-operator,
+.mq-math-mode x:-moz-any-link,
+.mq-math-mode x:default {
+  display: inline-block;
+}
+.mq-math-mode .mq-numerator,
+.mq-math-mode .mq-denominator {
+  display: block;
+}
+.mq-math-mode .mq-numerator {
+  padding: 0 0.1em;
+}
+.mq-math-mode .mq-denominator {
+  border-top: 1px solid;
+  float: right;
+  width: 100%;
+  padding: 0.1em;
+}
+.mq-math-mode .mq-sqrt-prefix {
+  padding-top: 0;
+  position: relative;
+  top: 0.1em;
+  vertical-align: top;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  -ms-transform-origin: top;
+  -o-transform-origin: top;
+  transform-origin: top;
+}
+.mq-math-mode .mq-sqrt-stem {
+  border-top: 1px solid;
+  margin-top: 1px;
+  padding-left: 0.15em;
+  padding-right: 0.2em;
+  margin-right: 0.1em;
+  padding-top: 1px;
+}
+.mq-math-mode .mq-vector-prefix {
+  display: block;
+  text-align: center;
+  line-height: 0.25em;
+  margin-bottom: -0.1em;
+  font-size: 0.75em;
+}
+.mq-math-mode .mq-vector-stem {
+  display: block;
+}
+.mq-math-mode .mq-large-operator {
+  text-align: center;
+}
+.mq-math-mode .mq-large-operator .mq-from,
+.mq-math-mode .mq-large-operator big,
+.mq-math-mode .mq-large-operator .mq-to {
+  display: block;
+}
+.mq-math-mode .mq-large-operator .mq-from,
+.mq-math-mode .mq-large-operator .mq-to {
+  font-size: 80%;
+}
+.mq-math-mode .mq-large-operator .mq-from {
+  float: right;
+  /* take out of normal flow to manipulate baseline */
+  width: 100%;
+}
+.mq-math-mode,
+.mq-math-mode .mq-editable-field {
+  cursor: text;
+  font-family: Symbola, "Times New Roman", serif;
+}
+.mq-math-mode .mq-overarrow {
+  border-top: 1px solid black;
+  margin-top: 1px;
+  padding-top: 0.2em;
+}
+.mq-math-mode .mq-overarrow:before {
+  display: block;
+  position: relative;
+  top: -0.34em;
+  font-size: 0.5em;
+  line-height: 0em;
+  content: '\27A4';
+  text-align: right;
+}
+.mq-math-mode .mq-overarrow.mq-arrow-left:before {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.mq-math-mode .mq-selection,
+.mq-editable-field .mq-selection,
+.mq-math-mode .mq-selection .mq-non-leaf,
+.mq-editable-field .mq-selection .mq-non-leaf,
+.mq-math-mode .mq-selection .mq-scaled,
+.mq-editable-field .mq-selection .mq-scaled {
+  background: #B4D5FE !important;
+  background: Highlight !important;
+  color: HighlightText;
+  border-color: HighlightText;
+}
+.mq-math-mode .mq-selection .mq-matrixed,
+.mq-editable-field .mq-selection .mq-matrixed {
+  background: #39F !important;
+}
+.mq-math-mode .mq-selection .mq-matrixed-container,
+.mq-editable-field .mq-selection .mq-matrixed-container {
+  filter: progid:DXImageTransform.Microsoft.Chroma(color='#3399FF') !important;
+}
+.mq-math-mode .mq-selection.mq-blur,
+.mq-editable-field .mq-selection.mq-blur,
+.mq-math-mode .mq-selection.mq-blur .mq-non-leaf,
+.mq-editable-field .mq-selection.mq-blur .mq-non-leaf,
+.mq-math-mode .mq-selection.mq-blur .mq-scaled,
+.mq-editable-field .mq-selection.mq-blur .mq-scaled,
+.mq-math-mode .mq-selection.mq-blur .mq-matrixed,
+.mq-editable-field .mq-selection.mq-blur .mq-matrixed {
+  background: #D4D4D4 !important;
+  color: black;
+  border-color: black;
+}
+.mq-math-mode .mq-selection.mq-blur .mq-matrixed-container,
+.mq-editable-field .mq-selection.mq-blur .mq-matrixed-container {
+  filter: progid:DXImageTransform.Microsoft.Chroma(color='#D4D4D4') !important;
+}
+.mq-editable-field .mq-textarea,
+.mq-math-mode .mq-textarea {
+  position: relative;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+}
+.mq-editable-field .mq-textarea *,
+.mq-math-mode .mq-textarea *,
+.mq-editable-field .mq-selectable,
+.mq-math-mode .mq-selectable {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  position: absolute;
+  clip: rect(1em 1em 1em 1em);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  resize: none;
+  width: 1px;
+  height: 1px;
+}
+.mq-math-mode .mq-matrixed {
+  background: white;
+  display: -moz-inline-box;
+  display: inline-block;
+}
+.mq-math-mode .mq-matrixed-container {
+  filter: progid:DXImageTransform.Microsoft.Chroma(color='white');
+  margin-top: -0.1em;
+}
